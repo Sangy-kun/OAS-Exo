@@ -8,7 +8,7 @@ paths:
       summary: Retourne "pong"
       responses:
         '200':
-          description: Réponse réussie
+          description: Réponse OK
           content:
             text/plain:
               schema:
