@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: API Gestion des Tâches
+  version: 1.0.0
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: "Faire les courses"
+        completed:
+          type: boolean
+          example: false
+      required:
+        - id
+        - title
+        - completed
