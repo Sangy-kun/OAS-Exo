@@ -5,7 +5,7 @@ info:
 paths:
   /users:
     get:
-      summary: Récupère une liste d'utilisateurs
+      summary: Récupère la liste des utilisateurs
       parameters:
         - name: page
           in: query
@@ -37,10 +37,10 @@ paths:
                       example: 1
                     name:
                       type: string
-                      example: Alice
+                      example: Jean
                     email:
                       type: string
-                      example: alice@example.com
+                      example: jean@hotmail.fr
         '400':
           description: Mauvais types de paramètres fournis
           content:
