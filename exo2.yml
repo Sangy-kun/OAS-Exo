@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: API Gestion des Utilisateurs
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: Récupère une liste d'utilisateurs
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            example: 1
+            minimum: 1
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+            example: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Liste des utilisateurs retrouvés
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: Alice
+                    email:
+                      type: string
+                      example: alice@example.com
+        '400':
+          description: Mauvais types de paramètres fournis
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Bad types for provided query parameters
